@@ -149,7 +149,7 @@
           <dependency>
             <groupId>io.spring.nohttp</groupId>
             <artifactId>nohttp-checkstyle</artifactId>
-            <version>${nohttp-checkstyle.version}</version>
+            <!--version>${nohttp-checkstyle.version}</version -->
           </dependency>
         </dependencies>
         <executions>
