@@ -17,13 +17,13 @@ pipeline {
       parallel {
         stage('Unit Test') {
           steps {
-            sh 'mvn -Dintegration-tests.skip=true -Dmaven.test.failure.ignore=true -Dcheckstyle.skip test'
+            sh 'mvn clean test'
           }
         }
 
         stage('Integration Test') {
           steps {
-            sh 'mvn -Dunit-tests.skip=true -Dcheckstyle.skip=true verify'
+            sh 'mvn failsafe:integration-test'
           }
         }
 
