@@ -10,6 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'mvn clean -DskipTests=true install'
+        archiveArtifacts 'target/*.jar'
       }
     }
 
