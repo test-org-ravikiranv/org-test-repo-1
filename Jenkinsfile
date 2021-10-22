@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        tool(name: 'maven', type: 'M3')
+        tool(name: 'M3', type: 'maven')
       }
     }
 
