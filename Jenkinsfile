@@ -13,6 +13,12 @@ pipeline {
       }
     }
 
+    stage('Test') {
+      steps {
+        sh 'mvn -Dmaven.test.failure.ignore=true -Dcheckstyle.skip test'
+      }
+    }
+
   }
   tools {
     maven 'M3'
