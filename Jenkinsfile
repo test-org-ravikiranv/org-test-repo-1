@@ -24,7 +24,7 @@ pipeline {
 
         stage('Integration Test') {
           steps {
-            sh 'mvn verify -Dtest=**/*IT failsafe:integration-test -DfailIfNoTests=false'
+            sh 'mvn verify -Dtest=**/*IT -DfailIfNoTests=false'
           }
         }
 
