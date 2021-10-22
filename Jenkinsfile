@@ -14,8 +14,19 @@ pipeline {
     }
 
     stage('Unit Test') {
-      steps {
-        sh 'mvn -Dintegration-tests.skip=true -Dmaven.test.failure.ignore=true -Dcheckstyle.skip test'
+      parallel {
+        stage('Unit Test') {
+          steps {
+            sh 'mvn -Dintegration-tests.skip=true -Dmaven.test.failure.ignore=true -Dcheckstyle.skip test'
+          }
+        }
+
+        stage('Integration Test') {
+          steps {
+            sh 'mvn -Dunit-tests.skip=true -Dcheckstyle.skip=true verify'
+          }
+        }
+
       }
     }
 
