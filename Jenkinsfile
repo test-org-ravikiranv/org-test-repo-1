@@ -23,7 +23,7 @@ pipeline {
 
         stage('Integration Test') {
           steps {
-            sh 'mvn -Dunit-tests.skip=true -Dcheckstyle.skip=true verify'
+            sh 'mvn verify -Dtest=**/*IT'
           }
         }
 
