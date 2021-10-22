@@ -19,6 +19,12 @@ pipeline {
       }
     }
 
+    stage('Junit Result Archieve') {
+      steps {
+        junit(allowEmptyResults: true, testResults: '**/target/surefire-reports/TEST-*.xml')
+      }
+    }
+
   }
   tools {
     maven 'M3'
