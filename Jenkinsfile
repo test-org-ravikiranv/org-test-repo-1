@@ -23,7 +23,7 @@ pipeline {
 
         stage('Integration Test') {
           steps {
-            sh 'mvn verify -Dtest=**/*IT'
+            sh 'mvn test -Dtest=**/*IT'
           }
         }
 
