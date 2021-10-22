@@ -23,7 +23,7 @@ pipeline {
 
         stage('Integration Test') {
           steps {
-            sh 'mvn test -Dtest=**/*IT'
+            sh 'mvn failsafe:integration-test'
           }
         }
 
