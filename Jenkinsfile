@@ -17,7 +17,7 @@ pipeline {
       parallel {
         stage('Unit Test') {
           steps {
-            sh 'mvn clean test'
+            sh 'mvn test -Dtest=**/*Tests'
           }
         }
 
