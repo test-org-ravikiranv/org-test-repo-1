@@ -30,7 +30,7 @@ pipeline
 	{         
 		steps
 		{                
-		sh 'docker build -t ravikirankiran097/Spring-PetClinic:$BUILD_NUMBER .'           
+		sh 'docker build -t ravikirankiran097/spring_petclinic:$BUILD_NUMBER .'           
         	echo 'Build Image Completed'                
 		}           
     }
@@ -38,7 +38,7 @@ pipeline
 	{         
 		steps
 		{     
-		sh 'docker tag ravikirankiran097/Spring-PetClinic:$BUILD_NUMBER ravikirankiran097/Spring-PetClinic:$BUILD_NUMBER'
+		sh 'docker tag ravikirankiran097/spring_petclinic:$BUILD_NUMBER ravikirankiran097/spring_petclinic:$BUILD_NUMBER'
 		sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'                 
 		echo 'Login Completed'                
 		}           
@@ -47,7 +47,7 @@ pipeline
 	{         
 		steps
 		{                            
-		sh 'docker push ravikirankiran097/Spring-PetClinic:$BUILD_NUMBER'                 
+		sh 'docker push ravikirankiran097/spring_petclinic:$BUILD_NUMBER'                 
 		echo 'Push Image Completed'       
 		}           
     }      
