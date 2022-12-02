@@ -47,7 +47,8 @@ pipeline
 	{         
 		steps
 		{                            
-		sh 'docker push ravikirankiran097/spring_petclinic:$BUILD_NUMBER'                 
+		sh 'docker push ravikirankiran097/spring_petclinic:$BUILD_NUMBER' 
+		sh 'docker rmi ravikirankiran097/spring_petclinic:$BUILD_NUMBER'
 		echo 'Push Image Completed'       
 		}           
     }      
