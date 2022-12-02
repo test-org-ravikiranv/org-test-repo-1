@@ -32,7 +32,7 @@ pipeline
 		echo 'Build Image Completed'
 		}
 	}
-	Stage('Login to Docker Hub')
+	stage('Login to Docker Hub')
 	{ 
 		steps
 		{
